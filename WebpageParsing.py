@@ -2,6 +2,7 @@
 from urllib.request import urlopen
 import json
 import urllib.request, urllib.parse
+import UI
 
 def showsome(searchfor):
   link = 'null'
@@ -19,7 +20,8 @@ def showsome(searchfor):
   #print('For more results, see %s' % data['cursor']['moreResultsUrl'])
   return link
 
-book = input("Enter the book/essay/etc you need (as if you were... searching Google or something): \n")
+EntryMenu = UI.TitleEntry()
+book = EntryMenu.SearchEntry
 main_url = showsome(book)
 print(main_url)
 
